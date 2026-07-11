@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prabhjot Kaur | Portfolio</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f8fafc; color: #1e293b; }
+
+    header {
+      background: #1e3a8a;
+      color: #fff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 1.6rem; letter-spacing: 1px; }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #93c5fd; }
+
+    section {
+      padding: 80px 8%;
+      background: #fff;
+    }
+    section:nth-child(even) { background: #f9fafb; }
+    section h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      color: #1e293b;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    section h2 i {
+        margin-right: 10px;
+        color: #2563eb;
+    }
+    
+    section h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #2563eb;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      border-radius: 2px;
+    }
+
+    /* ============================================
+     1. HOME SECTION
+    ============================================
+    */
+    #home {
+      height: 100vh;
+      padding: 0 8%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      color: #fff;
+      background-image: url('NewBackground1.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+
+    }
+
+    .hero-content {
+      max-width: 900px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    #home h2 { display: none; }
+
+    .hero-content p.subtitle {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .hero-content .typing {
+      color: #93c5fd;
+      font-weight: 500;
+    }
+    .hero-content .typing::after {
+      content: '|';
+      font-weight: 200;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .hero-content p.description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+
+    .btn-resume {
+        background: #2563eb;
+        color: #fff;
+        padding: 12px 25px;
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.3s;
+        display: inline-block;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .btn-resume:hover {
+        background: #1e40af;
+        transform: translateY(-2px);
+    }
+    
+    .scroll-down {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 2rem;
+        opacity: 0.7;
+        animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        40% {
+            transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+            transform: translateX(-50%) translateY(-5px);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        #home { text-align: center; justify-content: center; }
+        .hero-content h1 { font-size: 2.5rem; }
+        .hero-content p.subtitle { font-size: 1.5rem; }
+        .hero-content p.description { max-width: 100%; }
+    }
+
+
+    /* ============================================
+     2. ABOUT SECTION
+    ============================================
+    */
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .about-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+    }
+    .about-image {
+        flex: 1;
+        min-width: 250px;
+    }
+    .about-image img {
+        width: 100%;
+        max-width: 270px;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        display: block;
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+    }
+    .about-image img:hover {
+        transform: scale(1.05);
+    }
+    
+    .about-text {
+        flex: 2;
+        min-width: 300px;
+    }
+    .about-text p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+    .about-text ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+    .about-text li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 30px;
+    }
+    .about-text li::before {
+        content: none;
+    }
+    .about-text li i {
+        color: #2563eb;
+        position: absolute;
+        left: 0;
+        top: 4px;
+        font-size: 1.1rem;
+    }
+
+    /* ============================================
+     3. EXPERIENCE & EDUCATION
+    ============================================
+    */
+    .info-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      border-left: 6px solid #2563eb;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      padding: 25px 40px;
+      margin-bottom: 30px;
+      transition: 0.3s ease;
+    }
+    .info-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .info-left { width: 45%; }
+    .info-right { width: 50%; }
+    .info-left h3 {
+      font-size: 1.3rem;
+      color: #2563eb;
+      margin-bottom: 5px;
+    }
+    .info-left h3 i {
+        margin-right: 8px;
+    }
+    
+    .info-left h4 { color: #475569; font-size: 1rem; }
+    .info-right ul { list-style-type: disc; color: #334155; padding-left: 20px; }
+    .info-right li { line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .info-box { flex-direction: column; align-items: flex-start; }
+      .info-left, .info-right { width: 100%; }
+      .info-left { margin-bottom: 10px; }
+    }
+    
+  /* ============================================
+     4. SKILLS SECTION
+    ============================================
+  */
+  .skills {
+    padding: 80px 20px;
+    background: #f9fafb;
+  }
+
+  .skills h2 {
+    font-size: 2.5rem;
+  }
+
+  .skills h2::after {
+    background: #4a90e2;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .skill-box {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 45%;
+    flex-basis: 400px;
+    flex-grow: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .skill-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .skill-box h3 {
+    color: #4a90e2;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .skill-box h3 i {
+      margin-right: 8px;
+  }
+
+  .skill {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .skill p {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+    padding-right: 15px;
+  }
+
+  .progress {
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+    height: 10px;
+    margin: 0 15px 0 0;
+  }
+
+  .progress-bar {
+    background: #4a90e2;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+
+  .skill span {
+    font-size: 0.9rem;
+    color: #555;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     5. PROJECTS SECTION (Re-added)
+    ============================================
+  */
+  .project-filters {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .filter-btn {
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  .filter-btn:hover {
+    background: #dde5ed;
+  }
+  .filter-btn.active {
+    background: #2563eb;
+    color: #fff;
+  }
+
+  .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .project-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    width: 350px;
+    text-decoration: none;
+    color: #1e293b;
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.4s, visibility 0.4s, display 0.4s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-card.hide {
+      transform: scale(0.9);
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+  }
+
+  .project-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #f1f5f9;
+  }
+
+  .project-content {
+    padding: 25px 24px 18px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-content h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .project-content p {
+    font-size: 1rem;
+    color: #475569;
+    flex: 1;
+  }
+
+  .view-link {
+    display: block;
+    margin-top: 18px;
+    color: #4a90e2;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  /* ============================================
+     6. CERTIFICATIONS & ACTIVITIES
+    ============================================
+  */
+.certifications {
+  padding: 80px 20px;
+  background-color: #f9fafc;
+  text-align: center;
+  overflow: hidden;
+}
+
+.certifications h2 {
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.certifications h2::after {
+  background: #4a90e2;
+}
+
+.cert-slider {
+  overflow: hidden;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cert-track {
+  display: flex;
+  gap: 20px;
+  animation: slide 12s infinite linear;
+}
+
+.cert-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 0 0 calc(33.333% - 20px);
+  transition: transform 0.3s ease;
+  padding: 15px;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.cert-card h3 {
+  color: #4a90e2;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cert-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-33.33%); }
+  45% { transform: translateX(-33.33%); }
+  50% { transform: translateX(-66.66%); }
+  70% { transform: translateX(-66.66%); }
+  75% { transform: translateX(-100%); }
+  95% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 992px) {
+  .cert-card {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .cert-card {
+    flex: 0 0 100%;
+  }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+  }
+}
+
+  #activities .cert-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+
+  /* ============================================
+     7. UPDATED CONTACT SECTION
+    ============================================
+  */
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .contact-info {
+    flex: 1;
+    min-width: 300px;
+  }
+  .contact-info .intro {
+      text-align: left;
+      margin: 0;
+  }
+  .contact-info p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+  }
+  
+  #contact .intro {
+    text-align: left;
+    margin: 0 0 20px 0;
+    max-width: 100%;
+  }
+
+  .contact-links {
+    margin-top: 25px;
+  }
+  .contact-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px 10px 5px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+  }
+  .contact-links a:hover {
+    background: #1e3a8a;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+  .contact-form {
+    flex: 1.5;
+    min-width: 300px;
+    max-width: 100%;
+    margin: 0;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .contact-form label {
+    display: block;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+
+  .contact-form button {
+    display: block;
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .contact-form button:hover {
+    background: #1e40af;
+  }
+  
+  /* ============================================
+     8. FOOTER
+    ============================================
+  */
+  footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95rem;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Prabhjot Kaur</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#activities">Activities</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="hero-content">
+      <h1>Prabhjot Kaur</h1>
+      <p class="subtitle">I'm a <span class="typing"></span></p>
+      <p class="description">
+        Transforming complex data into clear, actionable insights. Passionate about using Python, SQL, and machine learning to build solutions that drive business decisions.
+      </p>
+      <a href="https://prabhjotkaur023.github.io/PrabhjotKaurCV/" class="btn-resume" target="_blank">View My Resume</a>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <section id="about">
+    <h2><i class="fas fa-user"></i>About Me</h2>
+    <div class="about-container">
+        <div class="about-image">
+            <img src="MyPic.png" alt="Prabhjot Kaur">
+        </div>
+        <div class="about-text">
+            <p>Hi, I’m <b>Prabhjot Kaur</b> — a passionate problem-solver who loves exploring where business meets data science.</p>
+            <p>My journey began with a Bachelor of Commerce (B.Com), where I learned how businesses operate, make decisions, and grow. That curiosity led me to pursue an MCA — bridging business strategy with data-driven technology.</p>
+            <p>⚙️ I bring both worlds together to solve real-world challenges — turning data into decisions and insights into impact.</p>
+            <ul>
+              <li><i class="fas fa-check-circle"></i>Business-First Thinking: Translating numbers into outcomes.</li>
+              <li><i class="fas fa-check-circle"></i>Technical Skills: Leveraging Python, SQL & ML for analytics.</li>
+              <li><i class="fas fa-check-circle"></i>Analytical Mindset: Discovering stories hidden in data.</li>
+              <li><i class="fas fa-check-circle"></i>People-Centric Approach: Connecting insights with user needs.</li>
+            </ul>
+        </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2><i class="fas fa-briefcase"></i>Experience</h2>
+    <div class="info-box">
+      <div class="info-left"><h3><i class="fas fa-briefcase"></i>Software Associate</h3><h4>Nov 2024 – Mar 2025 | Noida, On-site</h4></div>
+      <div class="info-right"><ul><li>Worked on data-driven applications and client software solutions.</li></ul></div>
+    </div>
+    <div class="info-box">
+      <div class="info-left"><h3><i class="fas fa-chart-bar"></i>Data Analyst Intern</h3><h4>Bitsolve Technologies Pvt. Ltd. | Mar 2024 – Oct 2024 | Hybrid</h4></div>
+      <div class="info-right"><ul><li>Analyzed data to provide insights for business process optimization.</li></ul></div>
+    </div>
+    <div class="info-box">
+      <div class="info-left"><h3><i class="fas fa-chalkboard-teacher"></i>Academic Counsellor Intern</h3><h4>PW (PhysicsWallah) | Jan 2024 – Mar 2024 | Remote</h4></div>
+      <div class="info-right"><ul><li>Guided students with academic planning and course recommendations.</li></ul></div>
+    </div>
+    <div class="info-box">
+      <div class="info-left"><h3><i class="fas fa-chart-line"></i>Sales & Marketing Intern</h3><h4>UAS International | Jun 2023 – Jul 2023 | Gurugram, Hybrid</h4></div>
+      <div class="info-right"><ul><li>Worked on marketing strategies and client engagement activities.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2><i class="fas fa-graduation-cap"></i>Education</h2>
+    <div class="info-box">
+      <div class="info-left">
+        <h3><i class="fas fa-graduation-cap"></i>Master of Computer Applications (MCA)</h3>
+        <h4>Lovely Professional University | 2025 – 2027</h4>
+      </div>
+      <div class="info-right">
+        <ul>
+          <li>Focused on Data Science, Machine Learning, and Cloud Computing.</li>
+          <li>Bridging technical innovation with business strategy.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-box">
+      <div class="info-left">
+        <h3><i class="fas fa-book-open"></i>Bachelor of Commerce (B.Com)</h3>
+        <h4>Lovely Professional University | 2021 – 2024</h4>
+      </div>
+      <div class="info-right">
+        <ul>
+          <li>Learned principles of business management and economics.</li>
+          <li>Developed analytical and decision-making skills.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2><i class="fas fa-cogs"></i>Technical & Analytical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3><i class="fas fa-tools"></i>Data Analysis Tools</h3>
+          <div class="skill">
+            <p>Power BI</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="90%"></div>
+            </div>
+            <span>4.5/5</span>
+          </div>
+          <div class="skill">
+            <p>Tableau</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="80%"></div>
+            </div>
+            <span>4/5</span>
+          </div>
+          <div class="skill">
+            <p>Microsoft Excel</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="95%"></div>
+            </div>
+            <span>5/5</span>
+          </div>
+          <div class="skill">
+            <p>Power Query</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="80%"></div>
+            </div>
+            <span>4/5</span>
+          </div>
+        </div>
+        
+        <div class="skill-box">
+          <h3><i class="fas fa-laptop-code"></i>Programming & Databases</h3>
+          <div class="skill">
+            <p>Python</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="85%"></div>
+            </div>
+            <span>4/5</span>
+          </div>
+          <div class="skill">
+            <p>SQL</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="95%"></div>
+            </div>
+            <span>5/5</span>
+          </div>
+          <div class="skill">
+            <p>MySQL</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="90%"></div>
+            </div>
+            <span>4.5/5</span>
+          </div>
+          <div class="skill">
+            <p>C</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="60%"></div>
+            </div>
+            <span>3/5</span>
+          </div>
+          <div class="skill">
+            <p>C++</p>
+            <div class="progress">
+              <div class="progress-bar" data-width="80%"></div>
+            </div>
+            <span>4/5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="otherskills">
+  <h2><i class="fas fa-briefcase"></i> Soft Skills and Languages</h2>
+
+   <!-- Soft Skills Box -->
+  <div class="info-box">
+    <div class="info-left">
+      <h3><i class="fas fa-user-check"></i> Soft Skills</h3>
+      <h4>Communication | Teamwork | Leadership | Problem Solving</h4>
+    </div>
+    <div class="info-right">
+      <ul>
+        <li>Strong interpersonal and communication abilities.</li>
+        <li>Effective team collaboration and leadership experience.</li>
+        <li>Adaptability and analytical thinking in dynamic environments.</li>
+        <li>Creative problem-solving and decision-making skills.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Languages Box -->
+  <div class="info-box">
+    <div class="info-left">
+      <h3><i class="fas fa-language"></i> Languages</h3>
+      <h4>English | Hindi | Punjabi</h4>
+    </div>
+    <div class="info-right">
+      <ul>
+        <li><strong>English:</strong> Fluent (Professional Working Proficiency)</li>
+        <li><strong>Hindi:</strong> Fluent (Full Professional Proficiency)</li>
+        <li><strong>Punjabi:</strong> Native / Bilingual Proficiency</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+  <section id="projects">
+    <h2><i class="fas fa-project-diagram"></i>Projects</h2>
+    
+    <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="analysis">Analysis & ML</button>
+        <button class="filter-btn" data-filter="dashboard">Dashboards</button>
+    </div>
+
+    <div class="project-grid">
+    <a class="project-card" data-category="analysis" href="https://www.coursera.org/account/accomplishments/certificate/H3RLLX4V6H3G" target="_blank">
+      <img src="catlify.jpeg" alt="Google Data Analytics Capstone cover" class="project-img">
+      <div class="project-content">
+        <h3>Google Data Analytics Capstone</h3>
+        <p>Applied the complete data analysis cycle—ask, prepare, process, analyze, share, and act—using Python, SQL, and R to deliver actionable insights for growth.</p>
+        <span class="view-link">View Project &rarr;</span>
+      </div>
+    </a>
+    
+    <a class="project-card" data-category="dashboard" href="https://app.powerbi.com/view?r=eyJrIjoiMDBiMjljODAtYmM2YS00YzQzLWE1YWItYWFiNmFmYTRmNTJhIiwidCI6ImUxNGU3M2ViLTUyNTEtNDM4OC04ZDY3LThmOWYyZTJkNWE0NiIsImMiOjEwfQ%3D%3D" target="_blank">
+      <img src="ecommerce-dashboard.jpg" alt="E-commerce Sales Dashboard" class="project-img">
+      <div class="project-content">
+        <h3>E-commerce Sales Dashboard</h3>
+        <p>Developed an interactive Power BI (or Tableau) dashboard for visualizing sales data, identifying trends, top performers, and opportunities for decision-making.</p>
+        <span class="view-link">View Project &rarr;</span>
+      </div>
+    </a>
+    
+    <a class="project-card" data-category="analysis" href="https://github.com/PrabhjotKaur023/smart-recipe-finder" target="_blank">
+      <img src="recipe-finder.jpg" alt="Smart Recipe Finder" class="project-img">
+      <div class="project-content">
+        <h3>Smart Recipe Finder (ML)</h3>
+        <p>Created a Python application to recommend recipes based on available ingredients using data wrangling and ML recommendation systems.</p>
+        <span class="view-link">View Project &rarr;</span>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <section id="certifications" class="certifications">
+    <div class="container">
+      <h2><i class="fas fa-certificate"></i>Certifications and Courses</h2>
+      <div class="cert-slider">
+        <div class="cert-track">
+          <div class="cert-card">
+            <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=9D6E73C470E89BDC750E42AE0A35F37BAC18E4A97ED0B3199A95AFB0D0A871CA" target="_blank">
+              <img src="certificate1.jpg" alt="Oracle Cloud Infrastructure Certificate">
+              <h3>Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
+              <p><strong>Issued:</strong> Oct 2025 &nbsp; | &nbsp; <strong>Expires:</strong> Oct 2027</p>
+            </a>          
+          </div>
+          <div class="cert-card">
+            <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=0470D03727762A403330A478B987A6ACB64270A3ECF7656D85399B73F7DEB73D" target="_blank">
+              <img src="certificate2.jpg" alt="Oracle APEX Cloud Developer Certificate">
+              <h3>Oracle APEX Cloud Developer Certified Professional</h3>
+              <p><strong>Issued:</strong> Oct 2025 &nbsp; | &nbsp; <strong>Expires:</strong> Oct 2027</p>
+            </a>
+          </div>
+          <div class="cert-card">
+            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/UBPLHZWC5M6C" target="_blank">
+              <img src="certificate3.jpeg" alt="Google Data Analytics Specialization">
+              <h3>Google Data Analytics Specialization</h3>
+              <p><strong>Issued by:</strong> Google</p>
+            </a>
+          </div>
+          <div class="cert-card">
+            <a href="https://www.linkedin.com/learning/certificates/71114dfde4e91c4bba1f3fd9c671a48068eb27b8686a586355792c2cfc6bc0aa?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BhnNYc4kwSHOmCA5wnXFM%2Bg%3D%3D" target="_blank">
+              <img src="certificate4.jpg" alt="Excel for Business Analysts">
+              <h3>Excel for Business Analysts</h3>
+              <p><strong>Issued by:</strong> LinkedIn Learning</p>
+            </a>
+          </div>
+          <div class="cert-card">
+            <a href="https://www.linkedin.com/learning/certificates/e27b645977bf87050572831b5043461d2237a502973c0b6ef0a3cde1533c1a89?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BhnNYc4kwSHOmCA5wnXFM%2Bg%3D%3D" target="_blank">
+              <img src="certificate5.jpg" alt="SQL Essential Training">
+              <h3>SQL Essential Training</h3>
+              <p><strong>Issued by:</strong> LinkedIn Learning</p>
+            </a>
+          </div>
+          <div class="cert-card">
+            <a href="https://www.linkedin.com/learning/certificates/507c8f857677b5e8ed4a1545f827a207517c59351d462e5234619b5452d89846?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BhnNYc4kwSHOmCA5wnXFM%2Bg%3D%3D" target="_blank">
+              <img src="certificate6.jpg" alt="Tableau Beyond the Basics">
+              <h3>Tableau Beyond the Basics: Growing Your Analytics Toolkit</h3>
+              <p><strong>Issued by:</strong> LinkedIn Learning</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  const track = document.querySelector('#certifications .cert-track');
+  if (track) {
+      track.addEventListener('animationiteration', () => {
+        track.style.animation = 'none';
+        void track.offsetWidth;
+        track.style.animation = 'slide 12s infinite linear';
+      });
+  }
+  </script>
+
+  <section id="activities" class="certifications">
+    <div class="container">
+      <h2><i class="fas fa-users"></i>Extracurricular Activities</h2>
+      <div class="cert-slider">
+        <div class="cert-track">
+          <div class="cert-card">
+            <img src="activity8.jpg" alt="The Expressionist Club">
+            <h3>💬 The Expressionist Club, LPU</h3>
+            <p><strong>Role:</strong> Coordinator: Helping learners to learn English in interactive ways with my team.</p>
+            <p><strong>Duration:</strong> Sep 2025 – Present</p>
+          </div>
+          <div class="cert-card">
+            <img src="activity2.jpg" alt="AWS Cloud Community LPU">
+            <h3>☁️ AWS Cloud Community, LPU</h3>
+            <p><strong>Role:</strong> Event Manager</p>
+            <p>Organized cloud tech events and hackathons.</p>
+          </div>
+          <div class="cert-card">
+            <img src="activity5.jpg" alt="Howard Smiles">
+            <h3>✍️ Howard Smiles</h3>
+            <p><strong>Role:</strong> Content Writer</p>
+            <p>Social Welfare and Awareness.</p>
+          </div>
+          <div class="cert-card">
+            <img src="image1.jpg.jpeg" alt="The Social Souls">
+            <h3>🤝 The Social Souls</h3>
+            <p><strong>Role:</strong> Associate Head in HR</p>
+            <p>Managed volunteer engagement and recruitment.</p>
+          </div>
+          <div class="cert-card">
+            <img src="Picture2.jpg" alt="PAHAL NGO">
+            <h3>🌱 PAHAL NGO</h3>
+            <p><strong>Role:</strong> Volunteer</p>
+            <p>Worked for community welfare and social initiatives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  // Script for the second carousel (Activities)
+  const track2 = document.querySelector('#activities .cert-track');
+  if (track2) {
+      track2.addEventListener('animationiteration', () => {
+        track2.style.animation = 'none';
+        void track2.offsetWidth;
+        track2.style.animation = 'slide 12s infinite linear';
+      });
+  }
+  </script>
+
+  <section id="contact">
+    <h2><i class="fas fa-envelope"></i>Contact</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="intro">
+              <p>Let's get in touch! Feel free to reach out for collaborations, opportunities, or just to chat about data 🚀</p>
+            </div>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/in/prabhjotkaur32/" target="_blank" aria-label="LinkedIn" title="My LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+              <a href="mailto:kaur.prabhjot2489@gmail.com" target="_blank" aria-label="Email" title="Send me an Email"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/PrabhjotKaur023" target="_blank" aria-label="GitHub" title="My GitHub Profile"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Prabhjot Kaur | Designed with ❤️ by Prabhjot
+  </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // --- 1. Typing effect script ---
+  const typingSpan = document.querySelector('#home .typing');
+  if (typingSpan) {
+      const words = [
+        "Data Science Enthusiast", 
+        "Aspiring Data Scientist", 
+        "MCA Student", 
+        "Passionate Problem-Solver"
+      ];
+      
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typeSpeed = 150;
+      const deleteSpeed = 100;
+      const delayBetweenWords = 2000;
+
+      function type() {
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+          typingSpan.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          typingSpan.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          setTimeout(type, delayBetweenWords);
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, 500);
+        } else {
+          const speed = isDeleting ? deleteSpeed : typeSpeed;
+          setTimeout(type, speed);
+        }
+      }
+      type(); // Start the effect
+  }
+  
+  // --- 2. Skill Bar Animation on Scroll ---
+  const skillBars = document.querySelectorAll('.progress-bar');
+  const animateSkills = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width;
+        observer.unobserve(bar); // Animate only once
+      }
+    });
+  };
+  const skillObserver = new IntersectionObserver(animateSkills, {
+    threshold: 0.8
+  });
+  skillBars.forEach(bar => {
+    skillObserver.observe(bar);
+  });
+
+  // --- 3. Project filter script (Re-added) ---
+  const filterContainer = document.querySelector('.project-filters');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  if (filterContainer) {
+      filterContainer.addEventListener('click', function(e) {
+          if (e.target.classList.contains('filter-btn')) {
+              filterContainer.querySelector('.active').classList.remove('active');
+              e.target.classList.add('active');
+              
+              const filterValue = e.target.getAttribute('data-filter');
+              
+              projectCards.forEach(card => {
+                  if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                      card.classList.remove('hide');
+                      card.style.display = 'flex';
+                  } else {
+                      card.classList.add('hide');
+                      setTimeout(() => {
+                           if (card.classList.contains('hide')) {
+                               card.style.display = 'none';
+                           }
+                      }, 400); // Match CSS transition duration
+                  }
+              });
+          }
+      });
+  }
+});
+</script>
+
+</body>
+
+</html>

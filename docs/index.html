@@ -641,133 +641,254 @@
      5. PROJECTS SECTION (Re-added)
     ============================================
   */
-  #projects{
+  /* =======================
+   PROJECTS SECTION
+======================= */
 
-    padding:90px 8%;
+#projects{
+    padding:100px 8%;
     background:#f8fafc;
+}
 
+#projects h2{
+    text-align:center;
+    font-size:2.6rem;
+    margin-bottom:15px;
 }
 
 .project-subtitle{
-
     text-align:center;
+    max-width:850px;
+    margin:0 auto 60px;
     color:#64748b;
-    max-width:750px;
-    margin:15px auto 50px;
-
+    line-height:1.8;
+    font-size:1.05rem;
 }
+
+/* Grid */
 
 .project-grid{
 
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:30px;
+
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
+    gap:35px;
 
 }
+
+
+/* Card */
 
 .project-card{
 
-    background:white;
-    border-radius:18px;
+    background:#fff;
+
+    border-radius:20px;
+
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.35s;
-    position:relative;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.4s ease;
+
+    display:flex;
+
+    flex-direction:column;
 
 }
+
 
 .project-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 50px rgba(37,99,235,.15);
 
 }
+
+
+/* Image */
 
 .project-card img{
 
     width:100%;
-    height:220px;
+
+    height:240px;
+
     object-fit:cover;
 
+    object-position:top;
+
+    transition:.5s;
+
 }
+
+
+.project-card:hover img{
+
+    transform:scale(1.04);
+
+}
+
+
+/* Content */
 
 .project-content{
 
     padding:25px;
 
+    display:flex;
+
+    flex-direction:column;
+
+    flex-grow:1;
+
 }
+
 
 .project-content h3{
 
+    font-size:1.6rem;
+
     margin-bottom:15px;
+
     color:#1e293b;
 
 }
 
+
 .project-content p{
 
     color:#64748b;
+
     line-height:1.7;
 
+    font-size:15px;
+
+    margin-bottom:20px;
+
 }
+
+
+/* Tech Stack */
 
 .project-tags{
 
-    margin:20px 0;
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:25px;
 
 }
+
 
 .project-tags span{
 
-    display:inline-block;
     background:#eff6ff;
+
     color:#2563eb;
+
     padding:8px 14px;
+
     border-radius:25px;
-    margin:5px;
+
     font-size:13px;
+
     font-weight:600;
 
-}
-
-.project-links{
-
-    display:flex;
-    gap:15px;
-    margin-top:20px;
-
-}
-
-.project-links a{
-
-    flex:1;
-    text-align:center;
-    padding:12px;
-    border-radius:8px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
     transition:.3s;
 
 }
 
-.project-links a:hover{
 
-    background:#1d4ed8;
+.project-tags span:hover{
+
+    background:#2563eb;
+
+    color:#fff;
 
 }
 
-.featured-tag{
 
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:#f59e0b;
-    color:white;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:600;
+/* Button */
+
+.project-btn{
+
+    margin-top:auto;
+
+    text-decoration:none;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+.project-btn:hover{
+
+    color:#1d4ed8;
+
+    letter-spacing:.4px;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .project-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .project-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .project-card img{
+
+        height:220px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    #projects{
+
+        padding:80px 6%;
+
+    }
+
+    .project-content{
+
+        padding:20px;
+
+    }
+
+    .project-content h3{
+
+        font-size:1.4rem;
+
+    }
 
 }
   
@@ -1706,18 +1827,17 @@
     <h2><i class="fas fa-code"></i> Projects</h2>
 
     <p class="project-subtitle">
-        A collection of AI, Software Development, Web Security, and Full Stack projects showcasing problem-solving, backend development, and intelligent applications.
+        A collection of AI, Java, Full Stack, and Web Security projects showcasing
+        intelligent applications, software engineering, and problem-solving skills.
     </p>
 
     <div class="project-grid">
 
         <!-- AI Resume Screener -->
 
-        <div class="project-card featured">
+        <div class="project-card">
 
-            <div class="featured-tag">Featured</div>
-
-            <img src="assets/projects/resume-screener.png" alt="AI Resume Screener">
+            <img src="ai-resume-screener.png" alt="AI Resume Screener">
 
             <div class="project-content">
 
@@ -1725,152 +1845,135 @@
 
                 <p>
                     AI-powered resume screening platform that analyzes resumes,
-                    extracts skills, and matches candidates against job descriptions.
+                    extracts skills, compares them with job descriptions,
+                    and provides ATS-friendly recommendations.
                 </p>
 
                 <div class="project-tags">
+
                     <span>Python</span>
-                    <span>NLP</span>
-                    <span>Machine Learning</span>
-                    <span>Streamlit</span>
-                </div>
-
-                <div class="project-links">
-
-                    <a href="https://github.com/PrabhjotKaur023/ai-resume-screener" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-
-                    <a href="#" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Live
-                    </a>
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
 
                 </div>
+
+                <a class="project-btn"
+                   href="https://github.com/PrabhjotKaur023/ai-resume-screener"
+                   target="_blank">
+
+                    View Project →
+
+                </a>
 
             </div>
 
         </div>
 
+
+
         <!-- Enterprise Knowledge Assistant -->
 
-        <div class="project-card featured">
+        <div class="project-card">
 
-            <div class="featured-tag">Featured</div>
-
-            <img src="assets/projects/eka.png" alt="Enterprise Knowledge Assistant">
+            <img src="enterprise-knowledge-assistant.png"
+                 alt="Enterprise Knowledge Assistant">
 
             <div class="project-content">
 
                 <h3>Enterprise Knowledge Assistant</h3>
 
                 <p>
-                    Spring Boot application for intelligent enterprise document
-                    management with AI-assisted knowledge retrieval.
+                    AI-powered enterprise documentation management system
+                    that enables teams to organize, search and retrieve
+                    organizational knowledge efficiently.
                 </p>
 
                 <div class="project-tags">
-                    <span>Spring Boot</span>
+
                     <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>Spring AI</span>
                     <span>MySQL</span>
-                    <span>Gemini API</span>
-                </div>
-
-                <div class="project-links">
-
-                    <a href="https://github.com/PrabhjotKaur023/enterprise-knowledge-assistant" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <span>Bootstrap</span>
 
                 </div>
+
+                <a class="project-btn"
+                   href="https://github.com/PrabhjotKaur023/enterprise-knowledge-assistant"
+                   target="_blank">
+
+                    View Project →
+
+                </a>
 
             </div>
 
         </div>
 
-        <!-- QA Platform -->
 
-        <div class="project-card featured">
 
-            <div class="featured-tag">Featured</div>
+        <!-- QA Automation Platform -->
 
-            <img src="assets/projects/qa-platform.png" alt="QA Platform">
+        <div class="project-card">
+
+            <img src="qa-automation-platform.png"
+                 alt="QA Automation Platform">
 
             <div class="project-content">
 
                 <h3>QA Automation Platform</h3>
 
                 <p>
-                    Intelligent platform for managing automated testing,
-                    execution reports, and QA workflows.
+
+                    Centralized QA platform for managing test cases,
+                    automation workflows, execution reports and software
+                    quality assurance activities.
+
                 </p>
 
                 <div class="project-tags">
-                    <span>Spring Boot</span>
+
                     <span>Java</span>
-                    <span>Selenium</span>
+                    <span>Spring Boot</span>
                     <span>MySQL</span>
-                </div>
-
-                <div class="project-links">
-
-                    <a href="https://github.com/PrabhjotKaur023/qa-automation-platform" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <span>Bootstrap</span>
 
                 </div>
+
+                <a class="project-btn"
+                   href="https://github.com/PrabhjotKaur023/qa-automation-platform"
+                   target="_blank">
+
+                    View Project →
+
+                </a>
 
             </div>
 
         </div>
 
+
+
         <!-- WebScanPro -->
 
         <div class="project-card">
 
-            <img src="assets/projects/webscanpro.png" alt="WebScanPro">
+            <img src="webscanpro.png"
+                 alt="WebScanPro">
 
             <div class="project-content">
 
                 <h3>WebScanPro</h3>
 
                 <p>
-                    Web application security testing tool for detecting SQL Injection,
-                    XSS, and OWASP Top 10 vulnerabilities.
-                </p>
 
-                <div class="project-tags">
+                    Web application security testing tool for identifying
+                    SQL Injection, XSS and other OWASP Top 10 vulnerabilities
+                    with comprehensive scan reports.
 
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>OWASP</span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <a href="https://github.com/PrabhjotKaur023/WebScanPro-WebApp-Security-Tool" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- CureConnect -->
-
-        <div class="project-card">
-
-            <img src="assets/projects/cureconnect.png" alt="CureConnect">
-
-            <div class="project-content">
-
-                <h3>CureConnect</h3>
-
-                <p>
-                    Healthcare management platform enabling appointment booking,
-                    patient management, and medical services.
                 </p>
 
                 <div class="project-tags">
@@ -1878,50 +1981,101 @@
                     <span>PHP</span>
                     <span>MySQL</span>
                     <span>JavaScript</span>
+                    <span>Bootstrap</span>
 
                 </div>
 
-                <div class="project-links">
+                <a class="project-btn"
+                   href="https://github.com/PrabhjotKaur023/WebScanPro-WebApp-Security-Tool"
+                   target="_blank">
 
-                    <a href="https://github.com/PrabhjotKaur023/CureConnect_Project" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    View Project →
 
-                </div>
+                </a>
 
             </div>
 
         </div>
 
+
+
+        <!-- CureConnect -->
+
+        <div class="project-card">
+
+            <img src="cureconnect.png"
+                 alt="CureConnect">
+
+            <div class="project-content">
+
+                <h3>CureConnect</h3>
+
+                <p>
+
+                    Hospital appointment and healthcare management system
+                    enabling patient registration, appointment booking
+                    and administrative management.
+
+                </p>
+
+                <div class="project-tags">
+
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+                <a class="project-btn"
+                   href="https://github.com/PrabhjotKaur023/CureConnect_Project"
+                   target="_blank">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
         <!-- Smart Parking -->
 
         <div class="project-card">
 
-            <img src="assets/projects/parking.png" alt="Smart Parking">
+            <img src="smart-parking-system.png"
+                 alt="Smart Parking System">
 
             <div class="project-content">
 
                 <h3>Smart Parking System</h3>
 
                 <p>
-                    Smart parking management solution for automated slot allocation,
-                    billing, and vehicle management.
+
+                    Smart parking management application for vehicle entry,
+                    slot allocation and parking management with an efficient
+                    user-friendly interface.
+
                 </p>
 
                 <div class="project-tags">
 
                     <span>Java</span>
+                    <span>Swing</span>
                     <span>MySQL</span>
 
                 </div>
 
-                <div class="project-links">
+                <a class="project-btn"
+                   href="https://github.com/PrabhjotKaur023/SmartParkingSystem"
+                   target="_blank">
 
-                    <a href="https://github.com/PrabhjotKaur023/SmartParkingSystem" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    View Project →
 
-                </div>
+                </a>
 
             </div>
 

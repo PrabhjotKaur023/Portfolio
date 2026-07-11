@@ -550,86 +550,92 @@
      4. SKILLS SECTION
     ============================================
   */
-  .skills {
-    padding: 80px 20px;
-    background: #f9fafb;
-  }
+  #skills{
 
-  .skills h2 {
-    font-size: 2.5rem;
-  }
+    padding:90px 8%;
+    background:#f8fafc;
 
-  .skills h2::after {
-    background: #4a90e2;
-  }
+}
 
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
+.skills-grid{
 
-  .skill-box {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 30px;
-    width: 45%;
-    flex-basis: 400px;
-    flex-grow: 1;
-    transition: transform 0.3s ease;
-  }
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
 
-  .skill-box:hover {
-    transform: translateY(-5px);
-  }
+}
 
-  .skill-box h3 {
-    color: #4a90e2;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  .skill-box h3 i {
-      margin-right: 8px;
-  }
+.skill-card{
 
-  .skill {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
 
-  .skill p {
-    margin: 0;
-    font-weight: 500;
-    color: #333;
-    padding-right: 15px;
-  }
+}
 
-  .progress {
-    background: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-grow: 1;
-    height: 10px;
-    margin: 0 15px 0 0;
-  }
+.skill-card:hover{
 
-  .progress-bar {
-    background: #4a90e2;
-    height: 100%;
-    border-radius: 10px 0 0 10px;
-    width: 0;
-    transition: width 1s ease-in-out;
-  }
+    transform:translateY(-8px);
 
-  .skill span {
-    font-size: 0.9rem;
-    color: #555;
-    flex-shrink: 0;
-  }
+}
+
+.skill-header{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+
+}
+
+.skill-header i{
+
+    width:55px;
+    height:55px;
+    background:#2563eb;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-size:22px;
+
+}
+
+.skill-header h3{
+
+    color:#1e293b;
+
+}
+
+.skill-tags{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+
+}
+
+.skill-tags span{
+
+    background:#eff6ff;
+    color:#2563eb;
+    padding:10px 16px;
+    border-radius:25px;
+    font-weight:600;
+    font-size:14px;
+    transition:.3s;
+
+}
+
+.skill-tags span:hover{
+
+    background:#2563eb;
+    color:#fff;
+
+}
 
   /* ============================================
      5. PROJECTS SECTION (Re-added)
@@ -1515,83 +1521,109 @@
     </div>
   </section>
 
-  <section id="skills" class="skills">
-    <div class="container">
-      <h2><i class="fas fa-cogs"></i>Technical & Analytical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3><i class="fas fa-tools"></i>Data Analysis Tools</h3>
-          <div class="skill">
-            <p>Power BI</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="90%"></div>
+<section id="skills">
+
+    <h2><i class="fas fa-code"></i> Technical Skills</h2>
+
+    <div class="skills-grid">
+
+        <!-- Programming -->
+
+        <div class="skill-card">
+
+            <div class="skill-header">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Programming</h3>
             </div>
-            <span>4.5/5</span>
-          </div>
-          <div class="skill">
-            <p>Tableau</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="80%"></div>
+
+            <div class="skill-tags">
+
+                <span>Python</span>
+                <span>SQL</span>
+                <span>PHP</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+
             </div>
-            <span>4/5</span>
-          </div>
-          <div class="skill">
-            <p>Microsoft Excel</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="95%"></div>
-            </div>
-            <span>5/5</span>
-          </div>
-          <div class="skill">
-            <p>Power Query</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="80%"></div>
-            </div>
-            <span>4/5</span>
-          </div>
+
         </div>
-        
-        <div class="skill-box">
-          <h3><i class="fas fa-laptop-code"></i>Programming & Databases</h3>
-          <div class="skill">
-            <p>Python</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="85%"></div>
+
+        <!-- AI -->
+
+        <div class="skill-card">
+
+            <div class="skill-header">
+
+                <i class="fas fa-brain"></i>
+
+                <h3>AI • ML • Data Science</h3>
+
             </div>
-            <span>4/5</span>
-          </div>
-          <div class="skill">
-            <p>SQL</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="95%"></div>
+
+            <div class="skill-tags">
+
+                <span>Machine Learning</span>
+                <span>Data Science</span>
+                <span>Deep Learning</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Scikit-learn</span>
+
             </div>
-            <span>5/5</span>
-          </div>
-          <div class="skill">
-            <p>MySQL</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="90%"></div>
-            </div>
-            <span>4.5/5</span>
-          </div>
-          <div class="skill">
-            <p>C</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="60%"></div>
-            </div>
-            <span>3/5</span>
-          </div>
-          <div class="skill">
-            <p>C++</p>
-            <div class="progress">
-              <div class="progress-bar" data-width="80%"></div>
-            </div>
-            <span>4/5</span>
-          </div>
+
         </div>
-      </div>
+
+        <!-- Cloud -->
+
+        <div class="skill-card">
+
+            <div class="skill-header">
+
+                <i class="fas fa-cloud"></i>
+
+                <h3>Cloud & Database</h3>
+
+            </div>
+
+            <div class="skill-tags">
+
+                <span>Oracle Cloud</span>
+                <span>MySQL</span>
+                <span>Firebase</span>
+                <span>XAMPP</span>
+
+            </div>
+
+        </div>
+
+        <!-- Tools -->
+
+        <div class="skill-card">
+
+            <div class="skill-header">
+
+                <i class="fas fa-tools"></i>
+
+                <h3>Tools & Platforms</h3>
+
+            </div>
+
+            <div class="skill-tags">
+
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>VS Code</span>
+                <span>Power BI</span>
+                <span>Tableau</span>
+
+            </div>
+
+        </div>
+
     </div>
-  </section>
+
+</section>
 <section id="otherskills">
   <h2><i class="fas fa-briefcase"></i> Soft Skills and Languages</h2>
 

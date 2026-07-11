@@ -901,106 +901,251 @@
      6. CERTIFICATIONS & ACTIVITIES
     ============================================
   */
+/*==========================================
+   CERTIFICATIONS (UNCHANGED)
+==========================================*/
+
 .certifications {
-  padding: 80px 20px;
-  background-color: #f9fafc;
-  text-align: center;
-  overflow: hidden;
+    padding:80px 20px;
+    background:#f9fafc;
+    text-align:center;
+    overflow:hidden;
 }
 
-.certifications h2 {
-  font-size: 2.5rem;
-  color: #222;
+.certifications h2{
+    font-size:2.5rem;
+    color:#222;
 }
 
-.certifications h2::after {
-  background: #4a90e2;
+.certifications h2::after{
+    background:#4a90e2;
 }
 
-.cert-slider {
-  overflow: hidden;
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+.cert-slider{
+    overflow:hidden;
+    position:relative;
+    max-width:1200px;
+    margin:0 auto;
 }
 
-.cert-track {
-  display: flex;
-  gap: 20px;
-  animation: slide 12s infinite linear;
+.cert-track{
+    display:flex;
+    gap:20px;
+    animation:slide 12s infinite linear;
 }
 
-.cert-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  flex: 0 0 calc(33.333% - 20px);
-  transition: transform 0.3s ease;
-  padding: 15px;
+.cert-card{
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    flex:0 0 calc(33.333% - 20px);
+    padding:15px;
+    transition:.3s;
 }
 
-.cert-card:hover {
-  transform: translateY(-5px);
+.cert-card:hover{
+    transform:translateY(-5px);
 }
 
-.cert-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+.cert-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
 }
 
-.cert-card h3 {
-  color: #4a90e2;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.cert-card h3{
+    color:#4a90e2;
+    font-size:1.2rem;
+    margin-bottom:10px;
 }
 
-.cert-card p {
-  font-size: 0.9rem;
-  color: #555;
+.cert-card p{
+    font-size:.9rem;
+    color:#555;
+    line-height:1.6;
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(0); }
-  25% { transform: translateX(-33.33%); }
-  45% { transform: translateX(-33.33%); }
-  50% { transform: translateX(-66.66%); }
-  70% { transform: translateX(-66.66%); }
-  75% { transform: translateX(-100%); }
-  95% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
+@keyframes slide{
+
+    0%{transform:translateX(0);}
+    20%{transform:translateX(0);}
+
+    25%{transform:translateX(-33.33%);}
+    45%{transform:translateX(-33.33%);}
+
+    50%{transform:translateX(-66.66%);}
+    70%{transform:translateX(-66.66%);}
+
+    75%{transform:translateX(-100%);}
+    95%{transform:translateX(-100%);}
+
+    100%{transform:translateX(0);}
+
 }
 
-@media (max-width: 992px) {
-  .cert-card {
-    flex: 0 0 calc(50% - 20px);
-  }
+@media(max-width:992px){
+
+    .cert-card{
+
+        flex:0 0 calc(50% - 20px);
+
+    }
+
 }
 
-@media (max-width: 600px) {
-  .cert-card {
-    flex: 0 0 100%;
-  }
+@media(max-width:600px){
 
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
-  }
+    .cert-card{
+
+        flex:0 0 100%;
+
+    }
+
 }
 
-  #activities .cert-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
 
+
+/*==========================================
+   ONLY EXTRA CURRICULAR ACTIVITIES
+==========================================*/
+
+#activities{
+
+    background:#f8fafc;
+
+}
+
+#activities .cert-slider{
+
+    overflow:visible;
+
+    max-width:1400px;
+
+}
+
+#activities .cert-track{
+
+    display:grid !important;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    animation:none !important;
+
+    transform:none !important;
+
+}
+
+#activities .cert-card{
+
+    flex:none !important;
+
+    width:100%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    padding:18px;
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+#activities .cert-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+#activities .cert-card img{
+
+    width:100%;
+
+    height:200px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    margin-bottom:18px;
+
+    transition:.3s;
+
+}
+
+#activities .cert-card:hover img{
+
+    transform:scale(1.03);
+
+}
+
+#activities .cert-card h3{
+
+    color:#2563eb;
+
+    font-size:1.15rem;
+
+    margin-bottom:10px;
+
+}
+
+#activities .cert-card p{
+
+    color:#555;
+
+    line-height:1.6;
+
+    font-size:14px;
+
+}
+
+#activities .cert-card strong{
+
+    color:#2563eb;
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    #activities .cert-track{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    #activities .cert-track{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #activities .cert-card img{
+
+        height:220px;
+
+    }
+
+}
 
   /* ============================================
      7. UPDATED CONTACT SECTION

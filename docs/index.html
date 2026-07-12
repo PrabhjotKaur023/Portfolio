@@ -1259,6 +1259,13 @@
     background: #1e40af;
   }
   
+  #formStatus{
+    margin-top:15px;
+    font-weight:600;
+    text-align:center;
+    transition:.3s;
+}
+  
   /* ============================================
      8. FOOTER
     ============================================
@@ -2397,35 +2404,133 @@
   </script>
 
   <section id="contact">
-    <h2><i class="fas fa-envelope"></i>Contact</h2>
-    <div class="contact-container">
-        <div class="contact-info">
-            <div class="intro">
-              <p>Let's get in touch! Feel free to reach out for collaborations, opportunities, or just to chat about data 🚀</p>
-            </div>
-            <div class="contact-links">
-              <a href="https://www.linkedin.com/in/prabhjotkaur32/" target="_blank" aria-label="LinkedIn" title="My LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-              <a href="mailto:kaur.prabhjot2489@gmail.com" target="_blank" aria-label="Email" title="Send me an Email"><i class="fas fa-envelope"></i></a>
-              <a href="https://github.com/PrabhjotKaur023" target="_blank" aria-label="GitHub" title="My GitHub Profile"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-        <form class="contact-form" action="#" method="post">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
+  <h2><i class="fas fa-envelope"></i> Contact</h2>
+
+  <div class="contact-container">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="intro">
+        <p>
+          Let's get in touch! Feel free to reach out for collaborations,
+          opportunities, or just to chat about data 🚀
+        </p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/prabhjotkaur32/" target="_blank" aria-label="LinkedIn" title="My LinkedIn Profile">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="mailto:kaur.prabhjot2489@gmail.com" target="_blank" aria-label="Email" title="Send me an Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="https://github.com/PrabhjotKaur023" target="_blank" aria-label="GitHub" title="My GitHub Profile">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
     </div>
-  </section>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="contact-form">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Write your message..."
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">
+        Send Message
+      </button>
+
+      <p id="formStatus"></p>
+
+    </form>
+
+  </div>
+</section>
+
+<script>
+const contactForm = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+const formStatus = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending...";
+
+    formStatus.textContent = "";
+
+    const formData = new FormData();
+
+    // Google Form Entry IDs
+    formData.append("entry.1945355214", document.getElementById("name").value);
+    formData.append("entry.374403372", document.getElementById("email").value);
+    formData.append("entry.301657969", document.getElementById("message").value);
+
+    fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSdcdq2k41ceZUVjTnXqVxp6PKINpodsjyHUq6v-ClSD9M7tWw/formResponse",
+        {
+            method: "POST",
+            mode: "no-cors",
+            body: formData
+        }
+    )
+    .then(() => {
+
+        formStatus.innerHTML = "✅ Thank you! Your message has been sent successfully.";
+        formStatus.style.color = "#16a34a";
+
+        contactForm.reset();
+
+    })
+    .catch(() => {
+
+        formStatus.innerHTML = "❌ Something went wrong. Please try again.";
+        formStatus.style.color = "#dc2626";
+
+    })
+    .finally(() => {
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Message";
+
+    });
+
+});
+</script>
 
   <footer>
     © 2025 Prabhjot Kaur | Designed with ❤️ by Prabhjot

@@ -1259,6 +1259,17 @@
     background: #1e40af;
   }
   
+  .google-form{
+    width:100%;
+}
+
+.google-form iframe{
+    width:100%;
+    min-height:850px;
+    border:none;
+    border-radius:15px;
+    background:#fff;
+}
   /* ============================================
      8. FOOTER
     ============================================
@@ -2397,35 +2408,47 @@
   </script>
 
   <section id="contact">
-    <h2><i class="fas fa-envelope"></i>Contact</h2>
+    <h2><i class="fas fa-envelope"></i> Contact</h2>
+
     <div class="contact-container">
+
         <div class="contact-info">
             <div class="intro">
-              <p>Let's get in touch! Feel free to reach out for collaborations, opportunities, or just to chat about data 🚀</p>
+                <p>
+                    Let's get in touch! Feel free to reach out for collaborations,
+                    opportunities, or just to chat about data 🚀
+                </p>
             </div>
+
             <div class="contact-links">
-              <a href="https://www.linkedin.com/in/prabhjotkaur32/" target="_blank" aria-label="LinkedIn" title="My LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-              <a href="mailto:kaur.prabhjot2489@gmail.com" target="_blank" aria-label="Email" title="Send me an Email"><i class="fas fa-envelope"></i></a>
-              <a href="https://github.com/PrabhjotKaur023" target="_blank" aria-label="GitHub" title="My GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/prabhjotkaur32/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="mailto:kaur.prabhjot2489@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a href="https://github.com/PrabhjotKaur023" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
         </div>
-        <form class="contact-form" action="#" method="post">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
+
+        <div class="google-form">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdcdq2k41ceZUVjTnXqVxp6PKINpodsjyHUq6v-ClSD9M7tWw/viewform?embedded=true"
+                width="100%"
+                height="850"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0">
+                Loading…
+            </iframe>
+        </div>
+
     </div>
-  </section>
+</section>
 
   <footer>
     © 2025 Prabhjot Kaur | Designed with ❤️ by Prabhjot
